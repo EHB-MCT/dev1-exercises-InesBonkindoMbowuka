@@ -5,20 +5,20 @@ import * as Utils from "../../scripts/utils.js";
 draw();
 
 function draw() {
-    context.lineWidth = 2;
-    context.strokeStyle = "white";
-    context.fillStyle = "#3498DB";
-    context.fillRect(50, 50, 300, 300);
-    drawLines();
+	context.lineWidth = 2;
+	context.strokeStyle = "white";
+	context.fillStyle = "#3498DB";
+	context.fillRect(50, 50, 300, 300);
+
+	let i = 1;
+	while (i < 12) {
+		console.log(i);
+		drawLines(75, 60 + i * 23, 325, 60 + i * 23);
+		i++;
+	}
+	console.log("end");
 }
 
-function drawLines() {
-    let i = 0;
-    let step=25;
-    let offset=75;
-    while (i<=11) {
-        
-        Utils.drawLine(75, offset+(step*i) ,325,offset(step*i));
-        i++;
-    }
+function drawLines(x1, y1, x2, y2) {
+	Utils.drawLine(x1, y1, x2, y2);
 }
