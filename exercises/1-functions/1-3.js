@@ -6,36 +6,26 @@ let width = context.canvas.width;
 let height = context.canvas.height;
 
 drawRect();
-drawBlack();
 
-function drawRect(){
-    context.beginPath();
-    context.strokeStyle="red";
-    context.rect(50,50,150,150);
-    context.stroke();
-    context.beginPath();
-    context.rect(75,275,50,50);
-    context.stroke();
-    context.beginPath();
-    context.rect(275,75,50,50);
-    context.stroke();
-    context.beginPath();
-    context.rect(200,200,150,150);
-    context.stroke();
-}
+function drawRect() {
+	context.beginPath();
+	context.strokeStyle = "red";
+	context.rect(50, 50, 175, 175);
+	context.rect(225, 225, 175, 175);
+	context.rect(75, 315, 65, 60);
+	context.rect(312, 75, 65, 65);
+	context.stroke();
 
-function drawBlack(){
-    context.fillStyle="black";
-    context.beginPath();
-    context.rect(125,125,150,150);
-    context.stroke();
-    context.fill();
-    context.beginPath();
-    context.rect(50,325,25,25);
-    context.stroke();
-    context.fill();
-    context.beginPath();
-    context.rect(325,50,25,25);
-    context.stroke();
-    context.fill();
+	context.beginPath();
+	context.strokeStyle = "red";
+	context.fillRect = "black";
+	context.rect(140, 140, 175, 175);
+	context.stroke();
+	context.fill();
+
+	context.beginPath();
+	context.fillRect = "black";
+	context.rect(50, 375, 25, 25);
+	context.rect(375, 50, 25, 25);
+	context.fill();
 }
