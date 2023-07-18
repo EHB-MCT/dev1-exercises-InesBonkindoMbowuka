@@ -9,27 +9,27 @@ drawshape();
 
 function drawshape() {
 	context.beginPath();
-	context.fillStyle = "#F4F6F7";
-	context.fillRect(50, 50, 350, 400);
+	context.fillStyle = "lightgrey";
+	context.fillRect(0, 0, width / 1.4, height);
 	context.stroke();
 	context.beginPath();
 	context.fillStyle = "#154360";
-	context.fillRect(50, 50, 120, 275);
+	context.fillRect(0, 0, width / 3, height - 250);
 	context.stroke();
 	context.beginPath();
 	context.fillStyle = "#154360";
-	context.fillRect(280, 50, 120, 275);
+	context.fillRect(1070, 0, width / 3, height - 250);
 	context.stroke();
 	context.beginPath();
 	context.fillStyle = "#E74C3C";
-	context.fillRect(50, 125, 350, 125);
+	context.fillRect(0, 125, width, height - 500);
 	context.stroke();
 	context.beginPath();
 	context.fillStyle = "#3498DB";
-	context.fillRect(50, 325, 120, 125);
+	context.fillRect(0, 462, width / 3, height);
 	context.stroke();
 	context.beginPath();
 	context.fillStyle = "#3498DB";
-	context.fillRect(280, 325, 120, 125);
+	context.fillRect(1070, 462, width / 3, height);
 	context.stroke();
 }
