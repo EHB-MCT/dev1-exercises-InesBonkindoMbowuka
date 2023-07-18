@@ -7,19 +7,25 @@ let height = context.canvas.height;
 
 drawLine();
 
+function drawLine() {
+	let x = 50;
+	let y = 100;
 
-function drawLine(){
-    context.beginPath();
-    context.moveTo(50,50);
-    context.lineTo(350,50);
-    context.lineTo(50,100);
-    context.lineTo(350,100);
-    context.lineTo(50,150);
-    context.lineTo(350,150);
-    context.lineTo(50,200);
-    context.lineTo(350,200);
-    context.lineTo(50,250);
-    context.lineTo(350,250);
-    context.lineTo(50,50);
-    context.stroke();
+	context.beginPath();
+	context.moveTo(x, y - 50);
+	context.lineTo(width - x, height / 15);
+	context.lineTo(x, y + 50);
+	context.lineTo(width - x, height / 5);
+	context.lineTo(x, y + 150);
+	context.lineTo(width - x, height - 450);
+	context.lineTo(x, y + 250);
+	context.lineTo(width - x, height - 350);
+	context.lineTo(x, y + 350);
+	context.lineTo(width - x, height - 250);
+	context.lineTo(x, y + 450);
+	context.lineTo(width - x, height - 150);
+	context.lineTo(x, y + 550);
+	context.lineTo(width - x, height - 50);
+	context.lineTo(x, x);
+	context.stroke();
 }
