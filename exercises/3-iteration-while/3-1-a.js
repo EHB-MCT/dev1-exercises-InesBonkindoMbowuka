@@ -2,6 +2,8 @@
 import context from "../../scripts/context.js";
 import * as Utils from "../../scripts/utils.js";
 
+//first code
+
 /*draw();
 
 function draw() {
@@ -22,6 +24,8 @@ function draw() {
 function drawLines(x1, y1, x2, y2) {
 	Utils.drawLine(x1, y1, x2, y2);
 }*/
+
+//redone
 
 draw();
 
