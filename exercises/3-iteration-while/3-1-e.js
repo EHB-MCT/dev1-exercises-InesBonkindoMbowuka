@@ -6,7 +6,7 @@ draw();
 
 function draw() {
 	context.lineWidth = 2;
-	context.strokeStyle = "white";
+	context.strokeStyle = "black";
 	context.fillStyle = "#3498DB";
 	context.fillRect(50, 50, 300, 300);
 
@@ -14,7 +14,7 @@ function draw() {
 
 	while (i < 8) {
 		drawgrid(50 + i * 21, 200 + i * 22, 200 + i * 22, 50 + i * 21);
-		drawgrid(50 + i * 22, 200, 200, 355);
+		drawgrid(50 + i * 20, 200, 50 + i * 10, 355);
 
 		i++;
 	}
