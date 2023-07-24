@@ -5,7 +5,34 @@ import * as Utils from "../../scripts/utils.js";
 let width = context.canvas.width;
 let height = context.canvas.height;
 
-let bubbles = [];
+let updateTime = 0;
+
+update();
+
+function update(currentTime) {
+	drawBall();
+	requestAnimationFrame(update);
+	console.log(currentTime / 1000);
+
+	let newTime = currentTime - updateTime;
+
+	newTime == currentTime;
+}
+
+function drawBall() {
+	let x = Utils.randomNumber(0, width);
+	let y = Utils.randomNumber(0, height);
+
+	context.fillStyle = "white";
+	context.beginPath();
+	context.rect(0, 0, width, height);
+	context.fill();
+
+	context.fillStyle = "blue";
+	Utils.fillCircle(x, y, 50);
+}
+
+/*let bubbles = [];
 
 setup();
 
@@ -43,4 +70,4 @@ function drawBubble(bubble) {
 	Utils.fillCircle(bubble.x, bubble.y, bubble.size);
 	context.fillStyle = Utils.hsl(bubble.hue, 50, 75);
 	Utils.fillCircle(bubble.x + bubble.size / 3, bubble.y - bubble.size / 3, bubble.size / 4);
-}
+}*/
