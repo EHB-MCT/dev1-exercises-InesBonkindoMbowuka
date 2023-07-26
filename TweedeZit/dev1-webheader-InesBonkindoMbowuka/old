@@ -1,0 +1,68 @@
+"use strict";
+import context from "./scripts/context.js";
+import * as Utils from "./scripts/utils.js";
+
+let width = context.canvas.width;
+let height = context.canvas.height;
+
+window.onmousemove = mouseMove;
+
+let balloons = [];
+
+let windSpeed = 2;
+let frameCount = 0;
+
+setup();
+update();
+
+function setup() {
+	context.textAlign = "center";
+	context.fillStyle = "white";
+	context.font = "bold 48pt Arial";
+	context.lineWidth = 3;
+	for (let i = 0; i < 50; i++) {
+		createBalloon();
+	}
+}
+
+function createBalloon() {
+	let balloon = {
+		x: Utils.randomNumber(0, width),
+		y: width + 50 + Utils.randomNumber(-25, 25),
+		speed: Utils.randomNumber(1, 7),
+		hue: Utils.randomNumber(200, 300),
+	};
+	balloons.push(balloon);
+}
+
+function update() {
+	context.fillStyle = "lightblue";
+	context.fillRect(0, 0, width, height);
+	context.fillStyle = "white";
+	context.fillText("Inès Bonkindo ", width / 2, height / 2 + 24);
+	for (let i = 0; i < balloons.length; i++) {
+		balloons[i].y -= balloons[i].speed;
+		balloons[i].x += Utils.randomNumber(-2, 2) + windSpeed;
+		drawBalloon(balloons[i].x, balloons[i].y, balloons[i].hue);
+	}
+
+	requestAnimationFrame(update);
+	console.log(balloons);
+}
+
+function drawBalloon(x, y, hue) {
+	context.fillStyle = Utils.hsl(hue, 100, 50);
+	Utils.fillEllipse(x, y, 20, 10);
+	Utils.fillEllipse(x, y - 10, 5, 20);
+	Utils.fillEllipse(x, y + 10, 5, 20);
+	Utils.fillEllipse(x + 25, y, 20, 5);
+	Utils.fillCircle(x + 20, y, 10);
+}
+
+/**
+ *
+ * @param {MouseEvent} e
+ */
+function mouseMove(e) {
+	windSpeed = (width / 2 - e.pageX) / 100;
+}
